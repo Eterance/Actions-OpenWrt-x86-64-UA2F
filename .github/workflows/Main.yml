@@ -1,16 +1,8 @@
 name: Build Main OpenWrt
 
 on:
-  push:
-    branches:
-      - main
   repository_dispatch:
   workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
@@ -28,7 +20,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
     - name: Checkout
