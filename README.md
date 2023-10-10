@@ -4,10 +4,13 @@
 
 ## fork from: https://github.com/MoorCorPa/Actions-immortalWrt-UA2F
 
-## 改动
+## 改动（只改动了 x86-64 也就是 Main，其他诸如 k2p r2s 未改动）
 
  - 修改 ubuntu 版本从 `18.04` 到 `20.04`，因为 Github Actions 已经不再支持 `18.04`，否则运行时会卡在获取 Runner 上。
- - 使用 Tag 来定位、签出到稳定版本，而不是使用原项目的 Branch，因为 Branch 在发布 Release 后还会继续更新（此时编译的被称为 Snapshot 版本）。Snapshot 不包含 Luci，而且有些软件包可能不适配。参见：[内核版本不适配](https://openwrt.org/faq/cannot_satisfy_dependencies)，[开发版本](https://openwrt.org/zh/releases/snapshot)
+ - 使用 Tag 来定位、签出到稳定版本，而不是使用原项目的 Branch，因为 Branch 在发布 Release 后还会继续更新（此时编译的被称为 Snapshot 版本）。Snapshot 不包含 Luci，而且有些软件包可能不适配。参见：[内核版本不适配](https://openwrt.org/faq/cannot_satisfy_dependencies)，[开发版本](https://openwrt.org/zh/releases/snapshot)（实际上自己编译出来的 Linux 内核版本还是和官方的正式版有些不一样，暂未找到解决方法）
+ - 启用自定义 UA （Windows 上的 edge 浏览器），替换了默认的 FFFF。
+ - 修复了 Release 不能正常生成的问题，并且为 tag 命名添加了更多信息。
+ - 使用 openwrt 版本 v21.02.7。
 
 
 [官方编译命令](https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem)

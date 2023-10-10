@@ -22,7 +22,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_TAG: v21.02.7
-  TAG_PREFIX: immortalwrt-v21.02.7-x86-64
+  TAG_PREFIX: immortalwrt-v21.02.7-x86-64-customUa
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Main.config
   DIY_P1_SH: diy-part1.sh

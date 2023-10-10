@@ -1,3 +1,13 @@
+#
+# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+#
+
 name: Build Main x86-64 OpenWrt - Stable
 
 on:
@@ -11,8 +21,8 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_TAG: v22.03.5
-  TAG_PREFIX: openwrt-v22.03.5-x86-64
+  REPO_TAG: v21.02.7
+  TAG_PREFIX: openwrt-v21.02.7-x86-64-customUa
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Main.config
   DIY_P1_SH: diy-part1.sh
