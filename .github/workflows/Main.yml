@@ -1,12 +1,12 @@
-name: Build Main OpenWrt
+name: Build Main x86-64 OpenWrt - Stable
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-21.02
+  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_TAG: v22.03.5
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Main.config
   DIY_P1_SH: diy-part1.sh
@@ -22,6 +22,9 @@ jobs:
   build:
     runs-on: ubuntu-20.04
 
+    permissions:
+      contents: write
+      
     steps:
     - name: Checkout
       uses: actions/checkout@main
@@ -42,7 +45,10 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone $REPO_URL openwrt
+        cd openwrt
+        git checkout $REPO_TAG
+        cd ..
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |

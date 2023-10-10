@@ -1,6 +1,18 @@
 
-## 一个云编译UA2F固件的项目
-###### 已经正常工作了哦，在使用中有任何问题，欢迎反馈给我
+# 一个云编译UA2F固件的项目
+
+
+## fork from: https://github.com/MoorCorPa/Actions-immortalWrt-UA2F
+
+## 改动
+
+ - 修改 ubuntu 版本从 `18.04` 到 `20.04`，因为 Github Actions 已经不再支持 `18.04`，否则运行时会卡在获取 Runner 上。
+ - 使用 Tag 来定位、签出到稳定版本，而不是使用原项目的 Branch，因为 Branch 在发布 Release 后还会继续更新（此时编译的被称为 Snapshot 版本）。Snapshot 不包含 Luci，而且有些软件包可能不适配。参见：[内核版本不适配](https://openwrt.org/faq/cannot_satisfy_dependencies)，[开发版本](https://openwrt.org/zh/releases/snapshot)
+
+
+[官方编译命令](https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem)
+
+## 原项目描述
 
 * 如果要自己设置规则记得把
 <br><code>iptables -t mangle -A ua2f -m set --set nohttp dst,dst -j RETURN</code>
