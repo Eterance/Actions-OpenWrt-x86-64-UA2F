@@ -11,7 +11,7 @@
  - 启用自定义 UA （Windows 上的 edge 浏览器），替换了默认的 FFFF。
  - 修复了 Release 不能正常生成的问题，并且为 tag 命名添加了更多信息。
  - 使用 openwrt 版本 v21.02.7。
-
+ - Main.config 更换为在本地电脑上使用图形选择生成的文件。原来的文件修改文件名为 Main.config.old。
 
 [官方编译命令](https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem)
 

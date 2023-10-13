@@ -22,7 +22,7 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_TAG: v21.02.7
-  TAG_PREFIX: openwrt-v21.02.7-x86-64-customUa
+  TAG_PREFIX: openwrt-v21.02.7-x86-64-customUa-openclash
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Main.config
   DIY_P1_SH: diy-part1.sh
